@@ -1,11 +1,11 @@
-MEC|cf59adc7ed17ad9d62d20c3837fe1442|Notre Dame Fighting Ir|Davidson Wildcats|1.01|0.00|21.00
-MEC|25c249c5d826256a741704663708b66f|Florida Intl Golden Pa|Southern Utah Thunderb|1.25|0.00|3.65
-MEC|9801ef955619891976b6cc9b7d1bf780|rebro HK|Frlunda HC|2.18|0.00|1.68
-MEC|9bd0adf3b04503ead04425bca117973f|Juve Stabia|US Catanzaro 1929|1.94|3.50|3.65
-MEC|d563569f19780b306d14d3c29b67f3bf|KK Crvena zvezda|Virtus Segafredo Bolog|1.26|0.00|4.13
-MEC|bff483955e4b791b12183d4ea15aed10|Lule HF|Malm Redhawks|1.82|0.00|1.98
-MEC|43a5ccec7f338df1651b828c9c8e8c5f|Oklahoma Sooners|Pittsburgh Panthers|1.97|0.00|1.85
+MEC|43a5ccec7f338df1651b828c9c8e8c5f|Oklahoma Sooners|Pittsburgh Panthers|2.12|0.00|1.76
 MEC|becb255ccc8bc25b5f7bd29df33c9f11|Rice Owls|UIC Flames|3.63|0.00|1.31
+MEC|1266361213aa65b3a2f950e194f93351|Cesena FC|Ascoli|2.50|3.25|2.55
+MEC|8a83b64c5a2da01e0be02f81c52c24c1|Benevento|Empoli|1.48|4.25|6.25
+MEC|155d48f7d5af716b832e611847eecfe8|Vicenza|Carrarese|2.75|2.85|2.20
+MEC|657f41ff337242ed3792e5516710e0de|Tranmere Rovers|Everton U21|1.75|4.29|3.98
+MEC|6bcef0e5f7b2a021b7e07514cdfa6493|FC Bayern Mnchen|Maccabi Tel Aviv|1.57|0.00|2.50
+MEC|1126881ccd5628bc2a3e896fd7e05fed|Virtus Entella|Hellas Verona|3.60|3.25|2.05
 REZ|222a2887819bb18d9b9572aef63d9b9e|1
 REZ|90da1cde4144fac00d41f2c0db2cc921|1
 REZ|15a079f55e23d26237844224f258c972|3
