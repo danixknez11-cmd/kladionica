@@ -1,11 +1,11 @@
-MEC|aa88b3c9dbbd08c5d5b25ea5f6b52bf1|BYU Cougars|Ole Miss Rebels|2.15|0.00|1.74
-MEC|47e7f62ab532489da5d2f97cf408b72e|Virginia Tech Hokies|Michigan St Spartans|2.38|0.00|1.53
-MEC|767cda572a9aefe0c057a4fe3199dfa4|Valencia Basket|Panathinaikos|1.82|0.00|2.00
-MEC|1707b8c728b9116472624aa8178ebfce|ASVEL Lyon Villeurbann|Pallacanestro Olimpia |2.12|0.00|1.77
-MEC|17fe7f97afa7602f6ee038dbdc5b7c19|Crawley Town|Barnet|3.70|3.95|1.91
-MEC|2a6af7917f12fd0d77b65b69901b976d|Bradford City|Barnsley|1.68|3.70|4.10
-MEC|58d85828fe483e5c7f813b2c068b05ac|Blackpool|Leicester City|4.40|4.20|1.66
-MEC|92c74d2f4a4275568feff8072ed15e73|Bristol City|Wrexham AFC|2.48|3.30|3.05
+MEC|f09e805155a9662265f0ec36851f8716|West Virginia Mountain|Florida Gators|1.22|0.00|4.00
+MEC|a9d72fa7f4207364b30b2b31daa37521|Long Beach St 49ers|Arkansas St Red Wolves|2.75|0.00|1.40
+MEC|0c21d6b1fcc860152966888ac7ac9d9a|Chapecoense|Palmeiras|3.15|3.40|1.92
+MEC|b46d2fa42df6e66be9af4204f2f8c609|Lindenwood Lions|New Haven Chargers|1.70|0.00|2.05
+MEC|8f5393daedb6d96d798e91592c35b0d3|Montana St Bobcats|Oklahoma Sooners|13.00|0.00|1.02
+MEC|cebf116689f6c16151415bb0f130dc5b|Tulsa Golden Hurricane|Illinois St Redbirds|1.73|0.00|2.00
+MEC|164c30fe9e3df9f785daa57c5053cf5d|Arizona Wildcats|Providence Friars|1.29|0.00|3.74
+MEC|a7ffd73def339810f1bbdbb89b3ef9e1|St Johns Red Storm|UCLA Bruins|17.00|0.00|1.01
 REZ|222a2887819bb18d9b9572aef63d9b9e|1
 REZ|90da1cde4144fac00d41f2c0db2cc921|1
 REZ|15a079f55e23d26237844224f258c972|3
@@ -28,9 +28,10 @@ MEC|3167a4072c65c9314c71d0fe49be8e28|Washington Wizards|Boston Celtics|4.53|0.00
 MEC|6bfadbd22ed8a054cf82ec1b12b78243|Denver Nuggets|Dallas Mavericks|1.33|0.00|3.53
 MEC|4f6d199bb67cf3a517a3880fd2f00b26|Philadelphia 76ers|Miami Heat|1.68|0.00|2.26
 MEC|f08629281f1510f47d91cc408f86a2a8|New York Knicks|Cleveland Cavaliers|1.44|0.00|2.75
-MEC|07421d1675d6bc51bb5fa91f84a09eb3|Oklahoma City Thunder|Minnesota Timberwolves|1.71|0.00|2.21
+MEC|07421d1675d6bc51bb5fa91f84a09eb3|Oklahoma City Thunder|Minnesota Timberwolves|1.75|0.00|2.15
 MEC|60fd73164f7b0d1848f998d922155d87|Houston Rockets|Phoenix Suns|1.22|0.00|4.20
 REZ|3e065ed32915a4afefae3a851f6df12a|3
+REZ|d563569f19780b306d14d3c29b67f3bf|3
 REZ|5a749c9d02c984e711e097f31a446542|3
 REZ|7472170e7ddebcf27cc4e03a8b32edcc|1
 REZ|d58a81d96dc96c937a865548f3a1a7c5|1
@@ -42,8 +43,8 @@ REZ|e2efcb24b2d9689232946057b7e43d23|1
 REZ|2d095386ab1321c89df24896d98495ee|3
 REZ|5074be0d13d60cc7fd82b06c4d8ddd31|1
 REZ|43376208ec2111794696249fe50f5e84|3
+REZ|e422af92d1fc06c0a330838c1c2f2e08|1
+REZ|50b80f3ebd38bf63663b11ae0afc575b|1
 REZ|aa77e2a08a1a003b0bbb62a5f8e8ae42|1
-REZ|7a62fe738bd20cfff6027c52fec05d51|3
 REZ|afae1c9d986e4ab2200dc9bd44b6b6c4|2
-REZ|e22f82b10fe71d230248b88fef87e58f|2
 REZ|99776445d5a5f4ed008f9a6d6a1495b7|1
