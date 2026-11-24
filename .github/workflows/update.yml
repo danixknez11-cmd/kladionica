@@ -12,53 +12,81 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Kreiraj skriptu
+      - name: Preuzmi utakmice
         run: |
-          cat << 'EOF' > fetch.php
-          <?php
-          $apiKey = "89138ea1afc9c5f5fef2f87cadb10d96";
-          $lige = ["soccer_uefa_champs_league", "soccer_epl", "soccer_spain_la_liga", "soccer_italy_serie_a"];
-          $out = "";
-          $c = 0;
-          foreach ($lige as $s) {
-              $sc = @json_decode(@file_get_contents("https://the-odds-api.com"), true);
-              if (is_array($sc)) {
-                  foreach ($sc as $g) {
-                      if (!empty($g["completed"]) && isset($g["scores"])) {
-                          $h = 0; $a = 0;
-                          foreach ($g["scores"] as $x) {
-                              if ($x["name"] == $g["home_team"]) $h = (int)$x["score"];
-                              if ($x["name"] == $g["away_team"]) $a = (int)$x["score"];
-                          }
-                          $ishod = ($h > $a) ? 1 : (($a > $h) ? 3 : 2);
-                          $out .= "REZ|" . $g["id"] . "|" . $ishod . "\n";
-                      }
-                  }
-              }
-              if ($c < 15) {
-                  $od = @json_decode(@file_get_contents("https://the-odds-api.com"), true);
-                  if (is_array($od)) {
-                      foreach ($od as $m) {
-                          if ($c >= 15 || empty($m["bookmakers"]) || strtotime($m["commence_time"]) <= time()) continue;
-                          $k1 = "1.50"; $kx = "3.00"; $k2 = "1.50";
-                          foreach ($m["bookmakers"]["markets"]["outcomes"] as $o) {
-                              if ($o["name"] == $m["home_team"]) $k1 = number_format((float)$o["price"], 2, ".", "");
-                              elseif ($o["name"] == $m["away_team"]) $k2 = number_format((float)$o["price"], 2, ".", "");
-                              else $kx = number_format((float)$o["price"], 2, ".", "");
-                          }
-                          $home = substr(preg_replace("/[^A-Za-z0-9 ]/", "", $m["home_team"]), 0, 22);
-                          $away = substr(preg_replace("/[^A-Za-z0-9 ]/", "", $m["away_team"]), 0, 22);
-                          $out .= "MEC|" . $m["id"] . "|" . $home . "|" . $away . "|" . $k1 . "|" . $kx . "|" . $k2 . "\n";
-                          $c++;
-                      }
-                  }
-              }
-          }
-          file_put_contents("kladionica.txt", $out);
-          ?>
+          cat << 'EOF' > skripta.py
+          import urllib.request, json, re, datetime
+
+          api_key = "89138ea1afc9c5f5fef2f87cadb10d96"
+          lige = ("soccer_uefa_champs_league", "soccer_epl", "soccer_spain_la_liga", "soccer_italy_serie_a")
+          out = []
+          count = 0
+          now = datetime.datetime.now(datetime.timezone.utc)
+
+          for sport in lige:
+              try:
+                  url_sc = f"https://the-odds-api.com{sport}/scores/?apiKey={api_key}&daysFrom=2"
+                  req = urllib.request.urlopen(url_sc, timeout=15)
+                  scores = json.loads(req.read().decode("utf-8"))
+                  for g in scores:
+                      if g.get("completed") and g.get("scores"):
+                          h, a = 0, 0
+                          for s in g.get("scores"):
+                              if s.get("name") == g.get("home_team"):
+                                  h = int(s.get("score"))
+                              if s.get("name") == g.get("away_team"):
+                                  a = int(s.get("score"))
+                          ishod = 1 if h > a else (3 if a > h else 2)
+                          gid = g.get("id")
+                          out.append(f"REZ|{gid}|{ishod}")
+              except Exception as e:
+                  pass
+
+              if count < 15:
+                  try:
+                      url_od = f"https://the-odds-api.com{sport}/odds/?apiKey={api_key}&regions=eu&markets=h2h"
+                      req = urllib.request.urlopen(url_od, timeout=15)
+                      matches = json.loads(req.read().decode("utf-8"))
+                      for m in matches:
+                          if count >= 15:
+                              break
+                          bms = m.get("bookmakers")
+                          if not bms:
+                              continue
+                          ct = datetime.datetime.fromisoformat(m.get("commence_time").replace("Z", "+00:00"))
+                          if ct <= now:
+                              continue
+
+                          prva_klad = next(iter(bms))
+                          prvi_market = next(iter(prva_klad.get("markets")))
+                          outcomes = prvi_market.get("outcomes")
+
+                          k1, kx, k2 = "1.50", "3.00", "1.50"
+                          for o in outcomes:
+                              cena = float(o.get("price"))
+                              if o.get("name") == m.get("home_team"):
+                                  k1 = f"{cena:.2f}"
+                              elif o.get("name") == m.get("away_team"):
+                                  k2 = f"{cena:.2f}"
+                              else:
+                                  kx = f"{cena:.2f}"
+
+                          home = re.sub(r"[^A-Za-z0-9 ]", "", m.get("home_team"))[:22]
+                          away = re.sub(r"[^A-Za-z0-9 ]", "", m.get("away_team"))[:22]
+                          mid = m.get("id")
+                          out.append(f"MEC|{mid}|{home}|{away}|{k1}|{kx}|{k2}")
+                          count += 1
+                  except Exception as e:
+                      pass
+
+          if not out:
+              out.append("NEMA_MECEVA_TRENUTNO")
+
+          with open("kladionica.txt", "w", encoding="utf-8") as f:
+              f.write("\n".join(out) + "\n")
           EOF
-          php fetch.php
-          rm fetch.php
+          python3 skripta.py
+          rm skripta.py
       - name: Sacuvaj fajl
         run: |
           git config user.name "Bot"
