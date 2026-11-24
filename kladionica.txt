@@ -1,12 +1,11 @@
-MEC|164c30fe9e3df9f785daa57c5053cf5d|Arizona Wildcats|Providence Friars|1.26|0.00|4.06
-MEC|eded8145f35a188e673fde457a1eb00f|Wyoming Cowboys|Kent State Golden Flas|1.25|0.00|4.16
-MEC|0dbbfc6c0ffe4c7d2c9b65eb8ab96cb3|Iowa State Cyclones|San Diego St Aztecs|1.17|0.00|4.50
-MEC|7e24a7f74f41134d9a72a537af4cc663|Michigan Wolverines|Creighton Bluejays|1.40|0.00|2.75
-MEC|3493a2092ac513abea61c5182bef95d8|Purdue Boilermakers|DePaul Blue Demons|1.61|0.00|2.45
-MEC|8d263dc36ea2b979c8b9130d531924aa|Kennesaw St Owls|Eastern Michigan Eagle|1.50|0.00|2.74
-MEC|c1d3fd33faf203ca224c34cc16d7a3ee|Florida Atlantic Owls|Mercer Bears|1.34|0.00|3.41
-MEC|6eebf254c2b2fe1f45604d6d30c42577|Wofford Terriers|Queens University Roya|1.85|0.00|1.85
-REZ|90da1cde4144fac00d41f2c0db2cc921|1
+MEC|1e3a2e8c68dcf6c024c3acd7340891d0|Furman Paladins|Elon Phoenix|1.33|0.00|3.45
+MEC|9896f5dfb6cf5fefd00dd1b813254965|Robert Morris Colonial|Lamar Cardinals|2.28|0.00|1.68
+MEC|9529e122f1dafb7c0802b5eb4d0b5ae5|Bellarmine Knights|Georgia Southern Eagle|2.05|0.00|1.70
+MEC|9bfe60f0e81a07d8ac7c88c95a05879e|Lehigh Mountain Hawks|Binghamton Bearcats|1.24|0.00|4.34
+MEC|89632d555740a0300af46ea6f5562e39|Harvard Crimson|Boston Univ Terriers|1.40|0.00|2.75
+MEC|864548d14d1c51b9eb5c8124103739bd|Bowling Green Falcons|GardnerWebb Bulldogs|1.10|0.00|6.50
+MEC|56cd92243f65d84421355bf0dadb2a77|Marist Red Foxes|Bryant Bulldogs|1.62|0.00|2.40
+MEC|f781e6b5530a39b9f984a7eab6a66d48|Coastal Carolina Chant|Campbell Fighting Came|1.85|0.00|1.98
 REZ|15a079f55e23d26237844224f258c972|3
 REZ|1e7b9477c6c55aea5efd9c1a47039f5c|3
 REZ|335ad5604b51b7742fd1dee92d78da35|1
@@ -23,10 +22,10 @@ REZ|db2311c331296d3328d71b842167dea4|1
 REZ|3e9dc52cb055c0154839c4aec417955b|1
 REZ|17f31499f145cd9d3232819395d29448|3
 MEC|42f48a4769eab3d1472d76aac0fd0fa7|Orlando Magic|Detroit Pistons|2.10|0.00|1.77
-MEC|3167a4072c65c9314c71d0fe49be8e28|Washington Wizards|Boston Celtics|4.34|0.00|1.24
+MEC|3167a4072c65c9314c71d0fe49be8e28|Washington Wizards|Boston Celtics|4.53|0.00|1.23
 MEC|6bfadbd22ed8a054cf82ec1b12b78243|Denver Nuggets|Dallas Mavericks|1.33|0.00|3.53
-MEC|4f6d199bb67cf3a517a3880fd2f00b26|Philadelphia 76ers|Miami Heat|1.88|0.00|1.99
-MEC|f08629281f1510f47d91cc408f86a2a8|New York Knicks|Cleveland Cavaliers|1.57|0.00|2.38
+MEC|4f6d199bb67cf3a517a3880fd2f00b26|Philadelphia 76ers|Miami Heat|1.87|0.00|1.99
+MEC|f08629281f1510f47d91cc408f86a2a8|New York Knicks|Cleveland Cavaliers|1.61|0.00|2.30
 MEC|07421d1675d6bc51bb5fa91f84a09eb3|Oklahoma City Thunder|Minnesota Timberwolves|1.81|0.00|2.06
 MEC|60fd73164f7b0d1848f998d922155d87|Houston Rockets|Phoenix Suns|1.22|0.00|4.20
 REZ|3e065ed32915a4afefae3a851f6df12a|3
