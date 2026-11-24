@@ -1,0 +1,68 @@
+name: Osvezi Kladionicu
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Kreiraj skriptu
+        run: |
+          cat << 'EOF' > fetch.php
+          <?php
+          $apiKey = "89138ea1afc9c5f5fef2f87cadb10d96";
+          $lige = ["soccer_uefa_champs_league", "soccer_epl", "soccer_spain_la_liga", "soccer_italy_serie_a"];
+          $out = "";
+          $c = 0;
+          foreach ($lige as $s) {
+              $sc = @json_decode(@file_get_contents("https://the-odds-api.com"), true);
+              if (is_array($sc)) {
+                  foreach ($sc as $g) {
+                      if (!empty($g["completed"]) && isset($g["scores"])) {
+                          $h = 0; $a = 0;
+                          foreach ($g["scores"] as $x) {
+                              if ($x["name"] == $g["home_team"]) $h = (int)$x["score"];
+                              if ($x["name"] == $g["away_team"]) $a = (int)$x["score"];
+                          }
+                          $ishod = ($h > $a) ? 1 : (($a > $h) ? 3 : 2);
+                          $out .= "REZ|" . $g["id"] . "|" . $ishod . "\n";
+                      }
+                  }
+              }
+              if ($c < 15) {
+                  $od = @json_decode(@file_get_contents("https://the-odds-api.com"), true);
+                  if (is_array($od)) {
+                      foreach ($od as $m) {
+                          if ($c >= 15 || empty($m["bookmakers"]) || strtotime($m["commence_time"]) <= time()) continue;
+                          $k1 = "1.50"; $kx = "3.00"; $k2 = "1.50";
+                          foreach ($m["bookmakers"]["markets"]["outcomes"] as $o) {
+                              if ($o["name"] == $m["home_team"]) $k1 = number_format((float)$o["price"], 2, ".", "");
+                              elseif ($o["name"] == $m["away_team"]) $k2 = number_format((float)$o["price"], 2, ".", "");
+                              else $kx = number_format((float)$o["price"], 2, ".", "");
+                          }
+                          $home = substr(preg_replace("/[^A-Za-z0-9 ]/", "", $m["home_team"]), 0, 22);
+                          $away = substr(preg_replace("/[^A-Za-z0-9 ]/", "", $m["away_team"]), 0, 22);
+                          $out .= "MEC|" . $m["id"] . "|" . $home . "|" . $away . "|" . $k1 . "|" . $kx . "|" . $k2 . "\n";
+                          $c++;
+                      }
+                  }
+              }
+          }
+          file_put_contents("kladionica.txt", $out);
+          ?>
+          EOF
+          php fetch.php
+          rm fetch.php
+      - name: Sacuvaj fajl
+        run: |
+          git config user.name "Bot"
+          git config user.email "bot@github.com"
+          git add kladionica.txt
+          git commit -m "Update" || exit 0
+          git push
