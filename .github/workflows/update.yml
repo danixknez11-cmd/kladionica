@@ -1,7 +1,7 @@
 name: Osvezi Kladionicu
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 permissions:
