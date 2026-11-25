@@ -18,7 +18,7 @@ REZ|17f31499f145cd9d3232819395d29448|3
 REZ|42f48a4769eab3d1472d76aac0fd0fa7|3
 REZ|3167a4072c65c9314c71d0fe49be8e28|3
 REZ|6bfadbd22ed8a054cf82ec1b12b78243|3
-MEC|4f6d199bb67cf3a517a3880fd2f00b26|Philadelphia 76ers|Miami Heat|1.81|0.00|2.06
+MEC|4f6d199bb67cf3a517a3880fd2f00b26|Philadelphia 76ers|Miami Heat|1.85|0.00|2.02
 MEC|87ce247fb83685389ca8ffb21be6cd3e|Charlotte Hornets|Chicago Bulls|1.62|0.00|2.30
 MEC|f08629281f1510f47d91cc408f86a2a8|New York Knicks|Cleveland Cavaliers|1.61|0.00|2.30
 MEC|07421d1675d6bc51bb5fa91f84a09eb3|Oklahoma City Thunder|Minnesota Timberwolves|1.81|0.00|2.06
@@ -48,7 +48,7 @@ REZ|2d095386ab1321c89df24896d98495ee|3
 REZ|5074be0d13d60cc7fd82b06c4d8ddd31|1
 REZ|43376208ec2111794696249fe50f5e84|3
 REZ|155fbdda10b6474a41649023baadfdf3|3
-MEC|71f3e5885a8f467260baa9aa31c62332|Boston Bruins|Winnipeg Jets|1.97|4.40|3.20
+MEC|71f3e5885a8f467260baa9aa31c62332|Boston Bruins|Winnipeg Jets|2.02|4.35|3.10
 MEC|a96a74be66899182f7eea8d72ec0e0fb|Buffalo Sabres|New York Rangers|2.20|4.25|2.80
 MEC|52d88f1e2ea2e8165d992430998b84f1|Pittsburgh Penguins|Calgary Flames|2.03|4.25|3.14
 REZ|e422af92d1fc06c0a330838c1c2f2e08|1
