@@ -1,7 +1,7 @@
 name: Osvezi Kladionicu
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -14,123 +14,96 @@ jobs:
       - uses: actions/checkout@v4
       - name: Preuzmi utakmice
         run: |
-          cat << 'EOF' > run.py
-          import urllib.request, ssl, json, re, datetime
+          cat << 'EOF' > skripta.py
+          import urllib.request, json, re, datetime
 
-          ctx = ssl._create_unverified_context()
-          def dohvati(url):
-              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-              return json.loads(urllib.request.urlopen(req, context=ctx, timeout=20).read().decode("utf-8"))
-
-          def am_to_dec(am):
-              try:
-                  val = float(am)
-                  return f"{(val / 100.0) + 1.0:.2f}" if val > 0 else f"{(100.0 / abs(val)) + 1.0:.2f}"
-              except Exception:
-                  return "1.85"
-
-          sportovi = (
-              ("basketball/nba", False, True),
-              ("hockey/nhl", False, True),
-              ("soccer/uefa.champions", True, False),
-              ("soccer/eng.1", True, False),
-              ("soccer/esp.1", True, False),
-              ("soccer/ita.1", True, False),
-              ("soccer/ger.1", True, False),
-              ("soccer/fra.1", True, False)
+          api_key = "8437677f0569d3de1c8fc29873bbcf86"
+          lige = (
+              "upcoming",
+              "basketball_nba",
+              "basketball_euroleague",
+              "icehockey_nhl",
+              "soccer_uefa_champs_league",
+              "soccer_epl",
+              "soccer_spain_la_liga",
+              "soccer_italy_serie_a"
           )
-
           out = []
-          greske = []
+          dodati_id = set()
+          dodati_rez = set()
           count = 0
-          danas = datetime.datetime.now(datetime.timezone.utc)
-          za_tri_dana = danas + datetime.timedelta(days=3)
-          datumi = danas.strftime("%Y%m%d") + "-" + za_tri_dana.strftime("%Y%m%d")
+          now = datetime.datetime.now(datetime.timezone.utc)
 
-          for sp, ima_x, koristi_datum in sportovi:
-              if count >= 15:
-                  break
+          for sport in lige:
               try:
-                  url = f"https://espn.com{sp}/scoreboard"
-                  if koristi_datum:
-                      url += f"?dates={datumi}"
-                  data = dohvati(url)
-                  for ev in data.get("events") or []:
-                      if count >= 15:
-                          break
-                      comps = ev.get("competitions") or []
-                      if not comps:
+                  url_sc = f"https://the-odds-api.com{sport}/scores/?apiKey={api_key}&daysFrom=3"
+                  req = urllib.request.urlopen(url_sc, timeout=15)
+                  scores = json.loads(req.read().decode("utf-8"))
+                  for g in scores:
+                      gid = g.get("id")
+                      if gid in dodati_rez:
                           continue
-                      comp = next(iter(comps))
-                      status = comp.get("status", {}).get("type", {}).get("state", "")
-                      if status != "pre":
-                          continue
-                      dom, gost = "", ""
-                      for c in comp.get("competitors") or []:
-                          ime = re.sub(r"[^A-Za-z0-9 ]", "", c.get("team", {}).get("shortDisplayName", ""))[:22]
-                          if c.get("homeAway") == "home":
-                              dom = ime
-                          else:
-                              gost = ime
-                      if not dom or not gost:
-                          continue
-                      k1, kx, k2 = "1.85", ("3.30" if ima_x else "0.00"), "1.95"
-                      odds_list = comp.get("odds") or []
-                      if odds_list:
-                          ml = next(iter(odds_list)).get("moneyline") or {}
-                          h_ml = ml.get("home", {}).get("close", {}).get("odds") or ml.get("home", {}).get("open", {}).get("odds")
-                          a_ml = ml.get("away", {}).get("close", {}).get("odds") or ml.get("away", {}).get("open", {}).get("odds")
-                          d_ml = ml.get("draw", {}).get("close", {}).get("odds") or ml.get("draw", {}).get("open", {}).get("odds")
-                          if h_ml:
-                              k1 = am_to_dec(h_ml)
-                          if a_ml:
-                              k2 = am_to_dec(a_ml)
-                          if ima_x and d_ml:
-                              kx = am_to_dec(d_ml)
-                      eid = ev.get("id", "")
-                      out.append(f"MEC|{eid}|{dom}|{gost}|{k1}|{kx}|{k2}")
-                      count += 1
-              except Exception as e:
-                  greske.append(f"{sp}:{type(e).__name__}")
-
-          juce = danas - datetime.timedelta(days=2)
-          datumi_rez = juce.strftime("%Y%m%d") + "-" + danas.strftime("%Y%m%d")
-          for sp, ima_x, koristi_datum in sportovi:
-              try:
-                  url = f"https://espn.com{sp}/scoreboard"
-                  if koristi_datum:
-                      url += f"?dates={datumi_rez}"
-                  data = dohvati(url)
-                  for ev in data.get("events") or []:
-                      comps = ev.get("competitions") or []
-                      if not comps:
-                          continue
-                      comp = next(iter(comps))
-                      if comp.get("status", {}).get("type", {}).get("state", "") != "post":
-                          continue
-                      h_score, a_score = 0, 0
-                      for c in comp.get("competitors") or []:
-                          sc = int(c.get("score", 0) or 0)
-                          if c.get("homeAway") == "home":
-                              h_score = sc
-                          else:
-                              a_score = sc
-                      ishod = 1 if h_score > a_score else (3 if a_score > h_score else 2)
-                      eid = ev.get("id", "")
-                      out.append(f"REZ|{eid}|{ishod}")
+                      if g.get("completed") and g.get("scores"):
+                          h, a = 0, 0
+                          for s in g["scores"]:
+                              if s.get("name") == g["home_team"]:
+                                  h = int(s.get("score"))
+                              if s.get("name") == g["away_team"]:
+                                  a = int(s.get("score"))
+                          ishod = 1 if h > a else (3 if a > h else 2)
+                          out.append(f"REZ|{gid}|{ishod}")
+                          dodati_rez.add(gid)
               except Exception:
                   pass
 
+              if count < 15:
+                  try:
+                      url_od = f"https://the-odds-api.com{sport}/odds/?apiKey={api_key}&regions=eu&markets=h2h"
+                      req = urllib.request.urlopen(url_od, timeout=15)
+                      matches = json.loads(req.read().decode("utf-8"))
+                      for m in matches:
+                          if count >= 15:
+                              break
+                          mid = m.get("id")
+                          if mid in dodati_id:
+                              continue
+                          bms = m.get("bookmakers")
+                          if not bms:
+                              continue
+                          ct = datetime.datetime.fromisoformat(m.get("commence_time").replace("Z", "+00:00"))
+                          if ct <= now:
+                              continue
+
+                          prva_klad = next(iter(bms))
+                          prvi_market = next(iter(prva_klad.get("markets")))
+                          outcomes = prvi_market.get("outcomes")
+
+                          k1, kx, k2 = "0.00", "0.00", "0.00"
+                          for o in outcomes:
+                              cena = float(o.get("price"))
+                              if o.get("name") == m.get("home_team"):
+                                  k1 = f"{cena:.2f}"
+                              elif o.get("name") == m.get("away_team"):
+                                  k2 = f"{cena:.2f}"
+                              else:
+                                  kx = f"{cena:.2f}"
+
+                          home = re.sub(r"[^A-Za-z0-9 ]", "", m.get("home_team"))[:22]
+                          away = re.sub(r"[^A-Za-z0-9 ]", "", m.get("away_team"))[:22]
+                          out.append(f"MEC|{mid}|{home}|{away}|{k1}|{kx}|{k2}")
+                          dodati_id.add(mid)
+                          count += 1
+                  except Exception:
+                      pass
+
           if not out:
-              if greske:
-                  out.append("GRESKA: " + ", ".join(greske))
-              else:
-                  out.append("NEMA_MECEVA_TRENUTNO")
+              out.append("NEMA_MECEVA_TRENUTNO")
+
           with open("kladionica.txt", "w", encoding="utf-8") as f:
               f.write("\n".join(out) + "\n")
           EOF
-          python3 run.py
-          rm run.py
+          python3 skripta.py
+          rm skripta.py
       - name: Sacuvaj fajl
         run: |
           git config user.name "Bot"
