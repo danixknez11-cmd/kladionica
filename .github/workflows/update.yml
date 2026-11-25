@@ -107,3 +107,7 @@ jobs:
           git add kladionica.txt
           git commit -m "Update" || exit 0
           git push
+                - name: Posalji na AwardSpace
+        run: |
+          curl -X POST -F "podaci=<kladionica.txt" "http://atwebpages.com"
+
