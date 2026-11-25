@@ -1,4 +1,3 @@
-REZ|222a2887819bb18d9b9572aef63d9b9e|1
 REZ|90da1cde4144fac00d41f2c0db2cc921|1
 REZ|15a079f55e23d26237844224f258c972|3
 REZ|1e7b9477c6c55aea5efd9c1a47039f5c|3
@@ -18,15 +17,15 @@ REZ|17f31499f145cd9d3232819395d29448|3
 REZ|42f48a4769eab3d1472d76aac0fd0fa7|3
 REZ|3167a4072c65c9314c71d0fe49be8e28|3
 REZ|6bfadbd22ed8a054cf82ec1b12b78243|3
-MEC|4f6d199bb67cf3a517a3880fd2f00b26|Philadelphia 76ers|Miami Heat|1.85|0.00|2.02
+MEC|4f6d199bb67cf3a517a3880fd2f00b26|Philadelphia 76ers|Miami Heat|1.97|0.00|1.90
 MEC|87ce247fb83685389ca8ffb21be6cd3e|Charlotte Hornets|Chicago Bulls|1.62|0.00|2.30
-MEC|f08629281f1510f47d91cc408f86a2a8|New York Knicks|Cleveland Cavaliers|1.80|0.00|2.00
+MEC|f08629281f1510f47d91cc408f86a2a8|New York Knicks|Cleveland Cavaliers|1.53|0.00|2.50
 MEC|07421d1675d6bc51bb5fa91f84a09eb3|Oklahoma City Thunder|Minnesota Timberwolves|1.81|0.00|2.06
-MEC|9e203cbbc6d37b7b0d9c08cb89fe0b28|Milwaukee Bucks|Brooklyn Nets|1.82|0.00|1.98
+MEC|9e203cbbc6d37b7b0d9c08cb89fe0b28|Milwaukee Bucks|Brooklyn Nets|1.85|0.00|1.95
 MEC|698d6d78acf30f4ff4e4aaf6670249ee|Memphis Grizzlies|Los Angeles Clippers|1.35|0.00|3.05
 MEC|60fd73164f7b0d1848f998d922155d87|Houston Rockets|Phoenix Suns|1.22|0.00|4.20
-MEC|e6df92326adb480e427bb7c10f445c60|Golden State Warriors|Sacramento Kings|1.34|0.00|2.85
-MEC|9aa9f220709533d70d11f85fae886771|Portland Trail Blazers|San Antonio Spurs|2.26|0.00|1.68
+MEC|e6df92326adb480e427bb7c10f445c60|Golden State Warriors|Sacramento Kings|1.30|0.00|3.05
+MEC|9aa9f220709533d70d11f85fae886771|Portland Trail Blazers|San Antonio Spurs|2.38|0.00|1.62
 REZ|3e065ed32915a4afefae3a851f6df12a|3
 REZ|d563569f19780b306d14d3c29b67f3bf|3
 REZ|6bcef0e5f7b2a021b7e07514cdfa6493|3
@@ -34,9 +33,8 @@ REZ|767cda572a9aefe0c057a4fe3199dfa4|3
 REZ|1707b8c728b9116472624aa8178ebfce|3
 REZ|0f9b0defd0a6c9603d7c70e7962bb628|3
 REZ|40589eed5e6894d5b8598ee721b9d57b|3
-MEC|a1ee21718811e522957cf904fb3ec31f|Olympiacos|Hapoel Tel Aviv|1.36|0.00|3.10
-MEC|c9a675960fa0ad6070fe3e6b378809a0|Saski Baskonia|Anadolu Efes|2.00|0.00|1.80
-MEC|b9ad9b132e4fd83592ee6cb62ea5cd46|Real Madrid|algiris|1.29|0.00|3.25
+REZ|a1ee21718811e522957cf904fb3ec31f|1
+REZ|c9a675960fa0ad6070fe3e6b378809a0|1
 REZ|5a749c9d02c984e711e097f31a446542|3
 REZ|7472170e7ddebcf27cc4e03a8b32edcc|1
 REZ|d58a81d96dc96c937a865548f3a1a7c5|1
@@ -50,8 +48,11 @@ REZ|5074be0d13d60cc7fd82b06c4d8ddd31|1
 REZ|43376208ec2111794696249fe50f5e84|3
 REZ|155fbdda10b6474a41649023baadfdf3|3
 MEC|71f3e5885a8f467260baa9aa31c62332|Boston Bruins|Winnipeg Jets|2.02|4.35|3.10
-MEC|a96a74be66899182f7eea8d72ec0e0fb|Buffalo Sabres|New York Rangers|2.20|4.25|2.80
-MEC|52d88f1e2ea2e8165d992430998b84f1|Pittsburgh Penguins|Calgary Flames|2.03|4.25|3.14
+MEC|a96a74be66899182f7eea8d72ec0e0fb|Buffalo Sabres|New York Rangers|2.20|4.30|2.78
+MEC|52d88f1e2ea2e8165d992430998b84f1|Pittsburgh Penguins|Calgary Flames|1.97|4.33|3.25
+MEC|b8dd63eeebfa6db1cdb18fb101d4a323|Tampa Bay Lightning|Carolina Hurricanes|2.60|4.25|2.43
+MEC|b06dda80256fb0e1b5efc78c0fca6d97|Columbus Blue Jackets|New Jersey Devils|3.10|4.40|2.07
+MEC|03b050660209b2ef14e1e40ef22a585e|Florida Panthers|Ottawa Senators|2.33|4.20|2.75
 REZ|e422af92d1fc06c0a330838c1c2f2e08|1
 REZ|50b80f3ebd38bf63663b11ae0afc575b|1
 REZ|aee4e3c225603397ab52de3d066b566b|2
@@ -61,8 +62,8 @@ REZ|8e93849b4c1ccbf1c207836d5c470150|3
 REZ|9a2ebad454db4ab3d53b89e96c79847a|3
 REZ|b9f00a4d399ec661e733857c9d5fb2dc|2
 REZ|ba719e378ac366262013bdb51a06aa6f|1
+REZ|e6fa007f93e0cef004be920f96ee95ba|3
+REZ|a7c87fac9e9cbcfc02ad0e0b29ca89e2|3
 REZ|aa77e2a08a1a003b0bbb62a5f8e8ae42|1
-REZ|7a62fe738bd20cfff6027c52fec05d51|3
 REZ|afae1c9d986e4ab2200dc9bd44b6b6c4|2
-REZ|e22f82b10fe71d230248b88fef87e58f|2
 REZ|99776445d5a5f4ed008f9a6d6a1495b7|1
