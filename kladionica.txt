@@ -1,1 +1,1 @@
-NEMA_MECEVA_TRENUTNO
+GRESKA: basketball/nba:URLError, hockey/nhl:URLError, soccer/uefa.champions:URLError, soccer/eng.1:URLError, soccer/esp.1:URLError, soccer/ita.1:URLError, soccer/ger.1:URLError, soccer/fra.1:URLError
