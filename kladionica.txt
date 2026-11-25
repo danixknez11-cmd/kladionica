@@ -1,10 +1,10 @@
-MEC|7a374c26e6bdab50be65f2b155fef2c8|Stanford Cardinal|Colorado Buffaloes|1.56|0.00|2.55
-MEC|62f11de81607e09d5edea5c4e1b26feb|Kansas St Wildcats|Gonzaga Bulldogs|9.00|0.00|1.05
+MEC|62f11de81607e09d5edea5c4e1b26feb|Kansas St Wildcats|Gonzaga Bulldogs|9.50|0.00|1.04
 MEC|454c104860f5430572b1d2ce372694c6|Avispa Fukuoka|Yokohama F Marinos|2.88|3.20|2.35
-MEC|e82083c75de6b9266b27142b9e045087|FC Tokyo|Hiroshima Sanfrecce FC|2.33|3.50|2.70
+MEC|e82083c75de6b9266b27142b9e045087|FC Tokyo|Hiroshima Sanfrecce FC|2.23|3.50|2.85
 MEC|fadcd788d19ce04ae2ac8f56edf60336|Fagiano Okayama|Shimizu S Pulse|1.94|3.30|3.75
 MEC|56ce614c797d9691f61a0aab5a4fdc7a|JEF United Chiba|Nagoya Grampus|3.10|3.45|2.14
 MEC|4d82f7110972d4f230cdfd5ca9a0d0dd|VVaren Nagasaki|Kawasaki Frontale|3.80|3.80|1.81
+MEC|2dfc5bec2d2449a9ee62d85ae92c8a2e|Mito HollyHock|Tokyo Verdy|2.70|2.95|2.65
 REZ|35ca45d3e548dc7207fd7f1696ab16f5|3
 REZ|ac6fb079d66ef35a2a77e22b5e94ef8d|3
 REZ|a72a1703f7a92b80768255d1d977a761|1
@@ -17,8 +17,9 @@ REZ|3e9dc52cb055c0154839c4aec417955b|1
 REZ|17f31499f145cd9d3232819395d29448|3
 REZ|42f48a4769eab3d1472d76aac0fd0fa7|3
 REZ|3167a4072c65c9314c71d0fe49be8e28|3
+REZ|6bfadbd22ed8a054cf82ec1b12b78243|3
 MEC|4f6d199bb67cf3a517a3880fd2f00b26|Philadelphia 76ers|Miami Heat|1.87|0.00|1.99
-MEC|87ce247fb83685389ca8ffb21be6cd3e|Charlotte Hornets|Chicago Bulls|1.57|0.00|2.38
+MEC|87ce247fb83685389ca8ffb21be6cd3e|Charlotte Hornets|Chicago Bulls|1.62|0.00|2.30
 MEC|f08629281f1510f47d91cc408f86a2a8|New York Knicks|Cleveland Cavaliers|1.61|0.00|2.30
 MEC|07421d1675d6bc51bb5fa91f84a09eb3|Oklahoma City Thunder|Minnesota Timberwolves|1.85|0.00|2.02
 MEC|9e203cbbc6d37b7b0d9c08cb89fe0b28|Milwaukee Bucks|Brooklyn Nets|1.90|0.00|1.90
