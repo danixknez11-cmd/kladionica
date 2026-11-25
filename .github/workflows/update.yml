@@ -19,7 +19,6 @@ jobs:
 
           api_key = "8437677f0569d3de1c8fc29873bbcf86"
           lige = (
-              "upcoming",
               "basketball_nba",
               "basketball_euroleague",
               "icehockey_nhl",
@@ -36,7 +35,7 @@ jobs:
           for sport in lige:
               if sport != "upcoming":
                   try:
-                      url_sc = f"https://api.the-odds-api.com/v4/sports/{sport}/scores/?apiKey={api_key}&daysFrom=2"
+                      url_sc = f"https://api.the-odds-api.com/v4/sports/{sport}/scores/?apiKey={api_key}&daysFrom=3"
                       req = urllib.request.urlopen(url_sc, timeout=15)
                       scores = json.loads(req.read().decode("utf-8"))
                       for g in scores:
