@@ -109,4 +109,10 @@ jobs:
           git push
       - name: Posalji na AwardSpace
         run: |
-          curl -v -A "Mozilla/5.0" -X POST --data-binary "@kladionica.txt" "http://atwebpages.com"
+          python3 -c '
+          import urllib.request
+          url = "http:" + "//balkanheritage." + "atwebpages.com" + "/kladionica.php?sifra=danix123"
+          data = open("kladionica.txt", "rb").read()
+          req = urllib.request.Request(url, data=data, headers={"User-Agent": "Mozilla/5.0"})
+          print(urllib.request.urlopen(req).read().decode("utf-8"))
+          '
