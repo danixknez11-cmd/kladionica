@@ -1,10 +1,11 @@
-MEC|454c104860f5430572b1d2ce372694c6|Avispa Fukuoka|Yokohama F Marinos|3.05|3.20|2.25
+MEC|454c104860f5430572b1d2ce372694c6|Avispa Fukuoka|Yokohama F Marinos|3.20|3.25|2.14
 MEC|e82083c75de6b9266b27142b9e045087|FC Tokyo|Hiroshima Sanfrecce FC|2.05|3.50|3.20
-MEC|fadcd788d19ce04ae2ac8f56edf60336|Fagiano Okayama|Shimizu S Pulse|1.94|3.30|3.75
+MEC|fadcd788d19ce04ae2ac8f56edf60336|Fagiano Okayama|Shimizu S Pulse|1.85|3.30|4.20
 MEC|56ce614c797d9691f61a0aab5a4fdc7a|JEF United Chiba|Nagoya Grampus|3.10|3.45|2.14
 MEC|4d82f7110972d4f230cdfd5ca9a0d0dd|VVaren Nagasaki|Kawasaki Frontale|3.80|3.80|1.81
-MEC|2dfc5bec2d2449a9ee62d85ae92c8a2e|Mito HollyHock|Tokyo Verdy|2.70|2.95|2.65
-MEC|c6b1486b9f3863fd4debf1f3727d0a1c|Urawa Red Diamonds|Cerezo Osaka|1.87|3.65|3.65
+MEC|2dfc5bec2d2449a9ee62d85ae92c8a2e|Mito HollyHock|Tokyo Verdy|2.75|2.90|2.65
+MEC|c6b1486b9f3863fd4debf1f3727d0a1c|Urawa Red Diamonds|Cerezo Osaka|1.80|3.70|3.85
+MEC|38d1af886179efb99270618ed4702a3d|Belmont Bruins|St Bonaventure Bonnies|2.70|0.00|1.51
 REZ|35ca45d3e548dc7207fd7f1696ab16f5|3
 REZ|ac6fb079d66ef35a2a77e22b5e94ef8d|3
 REZ|a72a1703f7a92b80768255d1d977a761|1
@@ -19,13 +20,12 @@ REZ|42f48a4769eab3d1472d76aac0fd0fa7|3
 REZ|3167a4072c65c9314c71d0fe49be8e28|3
 REZ|6bfadbd22ed8a054cf82ec1b12b78243|3
 MEC|4f6d199bb67cf3a517a3880fd2f00b26|Philadelphia 76ers|Miami Heat|1.87|0.00|1.99
-MEC|87ce247fb83685389ca8ffb21be6cd3e|Charlotte Hornets|Chicago Bulls|1.62|0.00|2.30
+MEC|87ce247fb83685389ca8ffb21be6cd3e|Charlotte Hornets|Chicago Bulls|1.67|0.00|2.20
 MEC|f08629281f1510f47d91cc408f86a2a8|New York Knicks|Cleveland Cavaliers|1.61|0.00|2.30
 MEC|07421d1675d6bc51bb5fa91f84a09eb3|Oklahoma City Thunder|Minnesota Timberwolves|1.85|0.00|2.02
 MEC|9e203cbbc6d37b7b0d9c08cb89fe0b28|Milwaukee Bucks|Brooklyn Nets|1.88|0.00|1.92
 MEC|698d6d78acf30f4ff4e4aaf6670249ee|Memphis Grizzlies|Los Angeles Clippers|1.40|0.00|2.85
 MEC|60fd73164f7b0d1848f998d922155d87|Houston Rockets|Phoenix Suns|1.22|0.00|4.20
-MEC|e6df92326adb480e427bb7c10f445c60|Golden State Warriors|Sacramento Kings|1.34|0.00|2.40
 REZ|3e065ed32915a4afefae3a851f6df12a|3
 REZ|d563569f19780b306d14d3c29b67f3bf|3
 REZ|6bcef0e5f7b2a021b7e07514cdfa6493|3
