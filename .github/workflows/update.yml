@@ -109,5 +109,4 @@ jobs:
           git push
       - name: Posalji na AwardSpace
         run: |
-          curl -X POST -F "podaci=<kladionica.txt" "http://balkanheritage.atwebpages.com/kladionica.php"
-
+          curl -A "Mozilla/5.0" -X POST --data-urlencode "podaci@kladionica.txt" "http://atwebpages.com"
