@@ -48,7 +48,6 @@ jobs:
           out = []
           count = 0
 
-          # 1. Nadolazece utakmice (danas i sutra)
           danas = datetime.datetime.now(datetime.timezone.utc)
           sutra = danas + datetime.timedelta(days=1)
           datumi = danas.strftime("%Y%m%d") + "-" + sutra.strftime("%Y%m%d")
@@ -62,7 +61,10 @@ jobs:
                   for ev in data.get("events") or []:
                       if count >= 15:
                           break
-                      comp = (ev.get("competitions") or [{}])[0]
+                      comps = ev.get("competitions") or []
+                      if not comps:
+                          continue
+                      comp = next(iter(comps))
                       status = comp.get("status", {}).get("type", {}).get("state", "")
                       if status != "pre":
                           continue
@@ -83,7 +85,7 @@ jobs:
 
                       odds_list = comp.get("odds") or []
                       if odds_list:
-                          o = odds_list[0]
+                          o = next(iter(odds_list))
                           ml = o.get("moneyline") or {}
                           h_ml = ml.get("home", {}).get("close", {}).get("odds") or ml.get("home", {}).get("open", {}).get("odds")
                           a_ml = ml.get("away", {}).get("close", {}).get("odds") or ml.get("away", {}).get("open", {}).get("odds")
@@ -101,7 +103,6 @@ jobs:
               except Exception:
                   pass
 
-          # 2. Zavrsene utakmice u zadnja 2 dana za isplatu tiketa
           juce = danas - datetime.timedelta(days=2)
           datumi_rez = juce.strftime("%Y%m%d") + "-" + danas.strftime("%Y%m%d")
 
@@ -110,7 +111,160 @@ jobs:
                   url = f"https://espn.com{sp}/scoreboard?dates={datumi_rez}"
                   data = dohvati(url)
                   for ev in data.get("events") or []:
-                      comp = (ev.get("competitions") or [{}])[0]
+                      comps = ev.get("competitions") or []
+                      if not comps:
+                          continue
+                      comp = next(iter(comps))
+                      status = comp.get("status", {}).get("type", {}).get("state", "")
+                      if status != "post":
+                          continue
+
+                      h_score, a_score = 0, 0
+                      for c in comp.get("competitors") or []:
+                          sc = int(c.get("score", 0) or 0)
+                          if c.get("homeAway") == "home":
+                              h_score = sc
+                          else:
+                              a_score = sc
+
+                      ishod = 1 if h_score > a_score else (3 if a_score > h_score else 2)
+                      eid = ev.get("id", "")
+                      out.append(f"REZ|{eid}|{ishod}")
+              except Exception:
+                  pass
+
+          if not out:
+              out.append("NEMA_MECEVA_TRENUTNO")
+
+          with open("kladionica.txt", "w", encoding="utf-8") as f:
+              f.write("\n".join(out) + "\n")
+          EOF
+          python3 skripta.py
+          rm skripta.py
+      - name: Sacuvaj fajl
+        run: |
+          git config user.name "Bot"
+          git config user.email "bot@github.com"
+          git add kladionica.txt
+          git commit -m "Update" || exit 0
+          git push
+name: Osvezi Kladionicu
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preuzmi utakmice
+        run: |
+          cat << 'EOF' > skripta.py
+          import urllib.request, ssl, json, re, datetime
+
+          ctx = ssl._create_unverified_context()
+
+          def dohvati(url):
+              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+              res = urllib.request.urlopen(req, context=ctx, timeout=20)
+              return json.loads(res.read().decode("utf-8"))
+
+          def am_to_dec(am):
+              try:
+                  val = float(am)
+                  if val > 0:
+                      return f"{(val / 100.0) + 1.0:.2f}"
+                  elif val < 0:
+                      return f"{(100.0 / abs(val)) + 1.0:.2f}"
+              except Exception:
+                  pass
+              return "1.85"
+
+          sportovi = (
+              ("basketball/nba", False),
+              ("hockey/nhl", False),
+              ("soccer/uefa.champions", True),
+              ("soccer/eng.1", True),
+              ("soccer/esp.1", True),
+              ("soccer/ita.1", True),
+              ("soccer/ger.1", True)
+          )
+
+          out = []
+          count = 0
+
+          danas = datetime.datetime.now(datetime.timezone.utc)
+          sutra = danas + datetime.timedelta(days=1)
+          datumi = danas.strftime("%Y%m%d") + "-" + sutra.strftime("%Y%m%d")
+
+          for sp, ima_x in sportovi:
+              if count >= 15:
+                  break
+              try:
+                  url = f"https://espn.com{sp}/scoreboard?dates={datumi}"
+                  data = dohvati(url)
+                  for ev in data.get("events") or []:
+                      if count >= 15:
+                          break
+                      comps = ev.get("competitions") or []
+                      if not comps:
+                          continue
+                      comp = next(iter(comps))
+                      status = comp.get("status", {}).get("type", {}).get("state", "")
+                      if status != "pre":
+                          continue
+
+                      dom, gost = "", ""
+                      for c in comp.get("competitors") or []:
+                          ime = re.sub(r"[^A-Za-z0-9 ]", "", c.get("team", {}).get("shortDisplayName", ""))[:22]
+                          if c.get("homeAway") == "home":
+                              dom = ime
+                          else:
+                              gost = ime
+                      if not dom or not gost:
+                          continue
+
+                      k1 = "1.85"
+                      kx = "3.30" if ima_x else "0.00"
+                      k2 = "1.95"
+
+                      odds_list = comp.get("odds") or []
+                      if odds_list:
+                          o = next(iter(odds_list))
+                          ml = o.get("moneyline") or {}
+                          h_ml = ml.get("home", {}).get("close", {}).get("odds") or ml.get("home", {}).get("open", {}).get("odds")
+                          a_ml = ml.get("away", {}).get("close", {}).get("odds") or ml.get("away", {}).get("open", {}).get("odds")
+                          d_ml = ml.get("draw", {}).get("close", {}).get("odds") or ml.get("draw", {}).get("open", {}).get("odds")
+                          if h_ml:
+                              k1 = am_to_dec(h_ml)
+                          if a_ml:
+                              k2 = am_to_dec(a_ml)
+                          if ima_x and d_ml:
+                              kx = am_to_dec(d_ml)
+
+                      eid = ev.get("id", "")
+                      out.append(f"MEC|{eid}|{dom}|{gost}|{k1}|{kx}|{k2}")
+                      count += 1
+              except Exception:
+                  pass
+
+          juce = danas - datetime.timedelta(days=2)
+          datumi_rez = juce.strftime("%Y%m%d") + "-" + danas.strftime("%Y%m%d")
+
+          for sp, ima_x in sportovi:
+              try:
+                  url = f"https://espn.com{sp}/scoreboard?dates={datumi_rez}"
+                  data = dohvati(url)
+                  for ev in data.get("events") or []:
+                      comps = ev.get("competitions") or []
+                      if not comps:
+                          continue
+                      comp = next(iter(comps))
                       status = comp.get("status", {}).get("type", {}).get("state", "")
                       if status != "post":
                           continue
