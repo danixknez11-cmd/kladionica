@@ -109,4 +109,4 @@ jobs:
           git push
       - name: Posalji na AwardSpace
         run: |
-          curl -A "Mozilla/5.0" -X POST --data-urlencode "podaci@kladionica.txt" "http://atwebpages.com"
+          curl -v -A "Mozilla/5.0" -X POST --data-binary "@kladionica.txt" "http://atwebpages.com"
