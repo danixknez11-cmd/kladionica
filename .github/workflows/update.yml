@@ -43,20 +43,29 @@ jobs:
                   for m in matches:
                       if count >= 15:
                           break
-                      bms = m.get("bookmakers")
+                      bms = m.get("bookmakers") or []
                       if not bms:
                           continue
-                      ct = datetime.datetime.fromisoformat(m.get("commence_time").replace("Z", "+00:00"))
+                      ct_str = m.get("commence_time", "")
+                      if not ct_str:
+                          continue
+                      ct = datetime.datetime.fromisoformat(ct_str.replace("Z", "+00:00"))
                       if ct <= now:
                           continue
 
-                      prva_klad = next(iter(bms))
-                      prvi_market = next(iter(prva_klad.get("markets")))
-                      outcomes = prvi_market.get("outcomes")
+                      outcomes = None
+                      for bm in bms:
+                          mkts = bm.get("markets") or []
+                          if mkts:
+                              outcomes = mkts.pop().get("outcomes")
+                              if outcomes:
+                                  break
+                      if not outcomes:
+                          continue
 
                       k1, kx, k2 = "0.00", "0.00", "0.00"
                       for o in outcomes:
-                          cena = float(o.get("price"))
+                          cena = float(o.get("price", 0))
                           if o.get("name") == m.get("home_team"):
                               k1 = f"{cena:.2f}"
                           elif o.get("name") == m.get("away_team"):
@@ -64,15 +73,15 @@ jobs:
                           else:
                               kx = f"{cena:.2f}"
 
-                      home = re.sub(r"[^A-Za-z0-9 ]", "", m.get("home_team"))[:22]
-                      away = re.sub(r"[^A-Za-z0-9 ]", "", m.get("away_team"))[:22]
-                      mid = m.get("id")
+                      home = re.sub(r"[^A-Za-z0-9 ]", "", m.get("home_team", ""))[:22]
+                      away = re.sub(r"[^A-Za-z0-9 ]", "", m.get("away_team", ""))[:22]
+                      mid = m.get("id", "")
                       out.append(f"MEC|{mid}|{home}|{away}|{k1}|{kx}|{k2}")
                       count += 1
               except urllib.error.HTTPError as e:
                   greske.append(f"HTTP_{e.code}_{sport}")
               except Exception as e:
-                  greske.append(f"ERR_{sport}")
+                  greske.append(f"ERR_{sport}_{type(e).__name__}")
 
           # 2. Povlacimo rezultate zavrsenih utakmica u zadnja 3 dana
           for sport in lige:
@@ -85,11 +94,11 @@ jobs:
                           h, a = 0, 0
                           for s in g["scores"]:
                               if s.get("name") == g["home_team"]:
-                                  h = int(s.get("score"))
+                                  h = int(s.get("score", 0))
                               if s.get("name") == g["away_team"]:
-                                  a = int(s.get("score"))
+                                  a = int(s.get("score", 0))
                           ishod = 1 if h > a else (3 if a > h else 2)
-                          gid = g.get("id")
+                          gid = g.get("id", "")
                           out.append(f"REZ|{gid}|{ishod}")
               except Exception:
                   pass
