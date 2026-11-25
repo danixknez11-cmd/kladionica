@@ -1,1 +1,1 @@
-NEMA_MECEVA_TRENUTNO
+GRESKA: ERR_basketball_nba, ERR_basketball_euroleague, ERR_icehockey_nhl, ERR_soccer_uefa_champs_league, ERR_soccer_epl, ERR_soccer_spain_la_liga, ERR_soccer_italy_serie_a
