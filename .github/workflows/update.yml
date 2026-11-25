@@ -29,18 +29,32 @@ jobs:
               except Exception:
                   return "1.85"
 
-          sportovi = (("basketball/nba", False), ("hockey/nhl", False), ("soccer/uefa.champions", True), ("soccer/eng.1", True), ("soccer/esp.1", True), ("soccer/ita.1", True))
+          sportovi = (
+              ("basketball/nba", False, True),
+              ("hockey/nhl", False, True),
+              ("soccer/uefa.champions", True, False),
+              ("soccer/eng.1", True, False),
+              ("soccer/esp.1", True, False),
+              ("soccer/ita.1", True, False),
+              ("soccer/ger.1", True, False),
+              ("soccer/fra.1", True, False)
+          )
+
           out = []
+          greske = []
           count = 0
           danas = datetime.datetime.now(datetime.timezone.utc)
-          sutra = danas + datetime.timedelta(days=1)
-          datumi = danas.strftime("%Y%m%d") + "-" + sutra.strftime("%Y%m%d")
+          za_tri_dana = danas + datetime.timedelta(days=3)
+          datumi = danas.strftime("%Y%m%d") + "-" + za_tri_dana.strftime("%Y%m%d")
 
-          for sp, ima_x in sportovi:
+          for sp, ima_x, koristi_datum in sportovi:
               if count >= 15:
                   break
               try:
-                  data = dohvati(f"https://espn.com{sp}/scoreboard?dates={datumi}")
+                  url = f"https://espn.com{sp}/scoreboard"
+                  if koristi_datum:
+                      url += f"?dates={datumi}"
+                  data = dohvati(url)
                   for ev in data.get("events") or []:
                       if count >= 15:
                           break
@@ -48,7 +62,8 @@ jobs:
                       if not comps:
                           continue
                       comp = next(iter(comps))
-                      if comp.get("status", {}).get("type", {}).get("state", "") != "pre":
+                      status = comp.get("status", {}).get("type", {}).get("state", "")
+                      if status != "pre":
                           continue
                       dom, gost = "", ""
                       for c in comp.get("competitors") or []:
@@ -75,14 +90,17 @@ jobs:
                       eid = ev.get("id", "")
                       out.append(f"MEC|{eid}|{dom}|{gost}|{k1}|{kx}|{k2}")
                       count += 1
-              except Exception:
-                  pass
+              except Exception as e:
+                  greske.append(f"{sp}:{type(e).__name__}")
 
           juce = danas - datetime.timedelta(days=2)
           datumi_rez = juce.strftime("%Y%m%d") + "-" + danas.strftime("%Y%m%d")
-          for sp, ima_x in sportovi:
+          for sp, ima_x, koristi_datum in sportovi:
               try:
-                  data = dohvati(f"https://espn.com{sp}/scoreboard?dates={datumi_rez}")
+                  url = f"https://espn.com{sp}/scoreboard"
+                  if koristi_datum:
+                      url += f"?dates={datumi_rez}"
+                  data = dohvati(url)
                   for ev in data.get("events") or []:
                       comps = ev.get("competitions") or []
                       if not comps:
@@ -104,7 +122,10 @@ jobs:
                   pass
 
           if not out:
-              out.append("NEMA_MECEVA_TRENUTNO")
+              if greske:
+                  out.append("GRESKA: " + ", ".join(greske))
+              else:
+                  out.append("NEMA_MECEVA_TRENUTNO")
           with open("kladionica.txt", "w", encoding="utf-8") as f:
               f.write("\n".join(out) + "\n")
           EOF
