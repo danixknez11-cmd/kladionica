@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Preuzmi utakmice
         run: |
-          python3 -c '
+          cat << 'EOF' > run.py
           import urllib.request, ssl, json, re, datetime
 
           ctx = ssl._create_unverified_context()
@@ -37,21 +37,28 @@ jobs:
           datumi = danas.strftime("%Y%m%d") + "-" + sutra.strftime("%Y%m%d")
 
           for sp, ima_x in sportovi:
-              if count >= 15: break
+              if count >= 15:
+                  break
               try:
                   data = dohvati(f"https://espn.com{sp}/scoreboard?dates={datumi}")
                   for ev in data.get("events") or []:
-                      if count >= 15: break
+                      if count >= 15:
+                          break
                       comps = ev.get("competitions") or []
-                      if not comps: continue
+                      if not comps:
+                          continue
                       comp = next(iter(comps))
-                      if comp.get("status", {}).get("type", {}).get("state", "") != "pre": continue
+                      if comp.get("status", {}).get("type", {}).get("state", "") != "pre":
+                          continue
                       dom, gost = "", ""
                       for c in comp.get("competitors") or []:
                           ime = re.sub(r"[^A-Za-z0-9 ]", "", c.get("team", {}).get("shortDisplayName", ""))[:22]
-                          if c.get("homeAway") == "home": dom = ime
-                          else: gost = ime
-                      if not dom or not gost: continue
+                          if c.get("homeAway") == "home":
+                              dom = ime
+                          else:
+                              gost = ime
+                      if not dom or not gost:
+                          continue
                       k1, kx, k2 = "1.85", ("3.30" if ima_x else "0.00"), "1.95"
                       odds_list = comp.get("odds") or []
                       if odds_list:
@@ -59,10 +66,14 @@ jobs:
                           h_ml = ml.get("home", {}).get("close", {}).get("odds") or ml.get("home", {}).get("open", {}).get("odds")
                           a_ml = ml.get("away", {}).get("close", {}).get("odds") or ml.get("away", {}).get("open", {}).get("odds")
                           d_ml = ml.get("draw", {}).get("close", {}).get("odds") or ml.get("draw", {}).get("open", {}).get("odds")
-                          if h_ml: k1 = am_to_dec(h_ml)
-                          if a_ml: k2 = am_to_dec(a_ml)
-                          if ima_x and d_ml: kx = am_to_dec(d_ml)
-                      out.append(f"MEC|{ev.get(\"id\", \"\")}|{dom}|{gost}|{k1}|{kx}|{k2}")
+                          if h_ml:
+                              k1 = am_to_dec(h_ml)
+                          if a_ml:
+                              k2 = am_to_dec(a_ml)
+                          if ima_x and d_ml:
+                              kx = am_to_dec(d_ml)
+                      eid = ev.get("id", "")
+                      out.append(f"MEC|{eid}|{dom}|{gost}|{k1}|{kx}|{k2}")
                       count += 1
               except Exception:
                   pass
@@ -74,23 +85,31 @@ jobs:
                   data = dohvati(f"https://espn.com{sp}/scoreboard?dates={datumi_rez}")
                   for ev in data.get("events") or []:
                       comps = ev.get("competitions") or []
-                      if not comps: continue
+                      if not comps:
+                          continue
                       comp = next(iter(comps))
-                      if comp.get("status", {}).get("type", {}).get("state", "") != "post": continue
+                      if comp.get("status", {}).get("type", {}).get("state", "") != "post":
+                          continue
                       h_score, a_score = 0, 0
                       for c in comp.get("competitors") or []:
                           sc = int(c.get("score", 0) or 0)
-                          if c.get("homeAway") == "home": h_score = sc
-                          else: a_score = sc
+                          if c.get("homeAway") == "home":
+                              h_score = sc
+                          else:
+                              a_score = sc
                       ishod = 1 if h_score > a_score else (3 if a_score > h_score else 2)
-                      out.append(f"REZ|{ev.get(\"id\", \"\")}|{ishod}")
+                      eid = ev.get("id", "")
+                      out.append(f"REZ|{eid}|{ishod}")
               except Exception:
                   pass
 
-          if not out: out.append("NEMA_MECEVA_TRENUTNO")
+          if not out:
+              out.append("NEMA_MECEVA_TRENUTNO")
           with open("kladionica.txt", "w", encoding="utf-8") as f:
               f.write("\n".join(out) + "\n")
-          '
+          EOF
+          python3 run.py
+          rm run.py
       - name: Sacuvaj fajl
         run: |
           git config user.name "Bot"
