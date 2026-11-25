@@ -1,10 +1,10 @@
-MEC|454c104860f5430572b1d2ce372694c6|Avispa Fukuoka|Yokohama F Marinos|3.20|3.25|2.14
-MEC|e82083c75de6b9266b27142b9e045087|FC Tokyo|Hiroshima Sanfrecce FC|2.05|3.50|3.20
-MEC|fadcd788d19ce04ae2ac8f56edf60336|Fagiano Okayama|Shimizu S Pulse|1.85|3.30|4.20
+MEC|454c104860f5430572b1d2ce372694c6|Avispa Fukuoka|Yokohama F Marinos|3.20|3.30|2.12
+MEC|e82083c75de6b9266b27142b9e045087|FC Tokyo|Hiroshima Sanfrecce FC|2.07|3.50|3.20
+MEC|fadcd788d19ce04ae2ac8f56edf60336|Fagiano Okayama|Shimizu S Pulse|1.85|3.25|4.20
 MEC|56ce614c797d9691f61a0aab5a4fdc7a|JEF United Chiba|Nagoya Grampus|3.10|3.45|2.14
-MEC|4d82f7110972d4f230cdfd5ca9a0d0dd|VVaren Nagasaki|Kawasaki Frontale|3.80|3.80|1.81
-MEC|2dfc5bec2d2449a9ee62d85ae92c8a2e|Mito HollyHock|Tokyo Verdy|2.75|2.90|2.65
-MEC|c6b1486b9f3863fd4debf1f3727d0a1c|Urawa Red Diamonds|Cerezo Osaka|1.80|3.70|3.85
+MEC|4d82f7110972d4f230cdfd5ca9a0d0dd|VVaren Nagasaki|Kawasaki Frontale|3.80|3.75|1.82
+MEC|2dfc5bec2d2449a9ee62d85ae92c8a2e|Mito HollyHock|Tokyo Verdy|2.75|2.90|2.70
+MEC|c6b1486b9f3863fd4debf1f3727d0a1c|Urawa Red Diamonds|Cerezo Osaka|1.66|3.95|4.40
 MEC|38d1af886179efb99270618ed4702a3d|Belmont Bruins|St Bonaventure Bonnies|2.70|0.00|1.51
 REZ|35ca45d3e548dc7207fd7f1696ab16f5|3
 REZ|ac6fb079d66ef35a2a77e22b5e94ef8d|3
