@@ -1,1 +1,1 @@
-GRESKA: ERR_basketball_nba_<urlopen error [Errno -2] Name or service not known>, ERR_basketball_euroleague_<urlopen error [Errno -2] Name or service not known>, ERR_icehockey_nhl_<urlopen error [Errno -2] Name or service not known>, ERR_soccer_uefa_champs_league_<urlopen error [Errno -2] Name or service not known>, ERR_soccer_epl_<urlopen error [Errno -2] Name or service not known>, ERR_soccer_spain_la_liga_<urlopen error [Errno -2] Name or service not known>, ERR_soccer_italy_serie_a_<urlopen error [Errno -2] Name or service not known>
+NEMA_MECEVA_TRENUTNO
