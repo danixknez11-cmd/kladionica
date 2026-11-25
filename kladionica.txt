@@ -1,11 +1,11 @@
 MEC|38d1af886179efb99270618ed4702a3d|Belmont Bruins|St Bonaventure Bonnies|2.70|0.00|1.51
 MEC|28276fb1617a6962a5623f38864957f0|Belleville Senators|Toronto Marlies|2.09|0.00|1.76
-MEC|ffd0046855b372187fbcfcddb6274995|Charlotte 49ers|Northern Iowa Panthers|1.29|0.00|3.74
+MEC|ffd0046855b372187fbcfcddb6274995|Charlotte 49ers|Northern Iowa Panthers|1.29|0.00|3.80
 MEC|40589eed5e6894d5b8598ee721b9d57b|Dubai Basketball|KK Partizan NIS|1.32|0.00|3.45
 MEC|5901cb03e047afb7c22309d0f09a5693|Hamilton Hammers|Syracuse Crunch|2.08|0.00|1.76
-MEC|477cb494daa4db3c14d2879c0e2597c9|Ohio Bobcats|Rice Owls|1.53|0.00|2.65
-MEC|ed88c790ce4d9123c6d0b02e2bfd0f9d|HIFK|TPS|1.65|0.00|2.30
-MEC|2946924b3ecf4b762332fb72674a5278|Jokerit|KooKoo|1.48|0.00|2.74
+MEC|477cb494daa4db3c14d2879c0e2597c9|Ohio Bobcats|Rice Owls|1.51|0.00|2.70
+MEC|ed88c790ce4d9123c6d0b02e2bfd0f9d|HIFK|TPS|1.66|0.00|2.28
+MEC|2946924b3ecf4b762332fb72674a5278|Jokerit|KooKoo|1.51|0.00|2.64
 REZ|35ca45d3e548dc7207fd7f1696ab16f5|3
 REZ|ac6fb079d66ef35a2a77e22b5e94ef8d|3
 REZ|a72a1703f7a92b80768255d1d977a761|1
@@ -23,7 +23,7 @@ MEC|4f6d199bb67cf3a517a3880fd2f00b26|Philadelphia 76ers|Miami Heat|1.87|0.00|1.9
 MEC|87ce247fb83685389ca8ffb21be6cd3e|Charlotte Hornets|Chicago Bulls|1.67|0.00|2.20
 MEC|f08629281f1510f47d91cc408f86a2a8|New York Knicks|Cleveland Cavaliers|1.67|0.00|2.20
 MEC|07421d1675d6bc51bb5fa91f84a09eb3|Oklahoma City Thunder|Minnesota Timberwolves|1.85|0.00|2.02
-MEC|9e203cbbc6d37b7b0d9c08cb89fe0b28|Milwaukee Bucks|Brooklyn Nets|1.85|0.00|1.95
+MEC|9e203cbbc6d37b7b0d9c08cb89fe0b28|Milwaukee Bucks|Brooklyn Nets|1.88|0.00|1.92
 MEC|698d6d78acf30f4ff4e4aaf6670249ee|Memphis Grizzlies|Los Angeles Clippers|1.38|0.00|2.90
 MEC|60fd73164f7b0d1848f998d922155d87|Houston Rockets|Phoenix Suns|1.22|0.00|4.20
 REZ|3e065ed32915a4afefae3a851f6df12a|3
