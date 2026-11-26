@@ -20,11 +20,11 @@ REZ|698d6d78acf30f4ff4e4aaf6670249ee|1
 REZ|60fd73164f7b0d1848f998d922155d87|1
 REZ|e6df92326adb480e427bb7c10f445c60|1
 REZ|9aa9f220709533d70d11f85fae886771|1
-MEC|3c522e32c3035d7dc3e1734903b84654|New York Knicks|Miami Heat|1.59|0.00|2.46
+MEC|3c522e32c3035d7dc3e1734903b84654|New York Knicks|Miami Heat|1.60|0.00|2.43
 MEC|5b64071f3e3bf67b0fdea8d1ac81d0ec|Indiana Pacers|Philadelphia 76ers|2.20|0.00|1.44
 MEC|c5dc35b4116988de2c1425df17456478|Boston Celtics|Atlanta Hawks|1.25|0.00|4.00
-MEC|428050645d1dc8b16d84287e21de55fa|Utah Jazz|Denver Nuggets|3.55|0.00|1.26
-MEC|13d9ca3bcb664829c603755d31401002|San Antonio Spurs|Los Angeles Lakers|1.44|0.00|2.94
+MEC|428050645d1dc8b16d84287e21de55fa|Utah Jazz|Denver Nuggets|3.60|0.00|1.27
+MEC|13d9ca3bcb664829c603755d31401002|San Antonio Spurs|Los Angeles Lakers|1.49|0.00|2.73
 REZ|3e065ed32915a4afefae3a851f6df12a|3
 REZ|d563569f19780b306d14d3c29b67f3bf|3
 REZ|6bcef0e5f7b2a021b7e07514cdfa6493|3
@@ -57,16 +57,16 @@ REZ|696cf3d8787917f769a8d9a18560e2f0|3
 REZ|b99129d0236ae270cae2b42a0befc503|1
 REZ|d2f0dc1f1216c62c2b7206c15f84bc02|3
 REZ|c68f7a448ea05f866093dfb4221e076e|1
-MEC|27cb678af08c1929cf19d9350d9f511e|Boston Bruins|Toronto Maple Leafs|2.00|4.40|3.14
+MEC|27cb678af08c1929cf19d9350d9f511e|Boston Bruins|Toronto Maple Leafs|1.98|4.40|3.18
 MEC|978dfc077c2cba5159882a1f65088b8d|New Jersey Devils|Calgary Flames|1.57|5.00|5.00
 MEC|b5234ea5788fb4f5393efc6c33c8e5e7|Nashville Predators|Utah Mammoth|2.50|4.20|2.55
-MEC|f23fc3f7fb3bfb06c2bee42fcfe8f050|St Louis Blues|Dallas Stars|2.74|4.15|2.27
+MEC|f23fc3f7fb3bfb06c2bee42fcfe8f050|St Louis Blues|Dallas Stars|2.76|4.15|2.26
 MEC|f4f067c12199285d9589564210a2a7d5|Columbus Blue Jackets|Detroit Red Wings|2.30|4.35|2.75
 MEC|f59fbb4eb34e72efeecfce2b7adc2198|Washington Capitals|Florida Panthers|2.50|4.25|2.55
 MEC|e455a88aa787a29717a862a536046895|Tampa Bay Lightning|Ottawa Senators|2.17|4.25|3.00
 MEC|a76ba8f9808ac21b09342afdd5df0b32|Philadelphia Flyers|Vancouver Canucks|1.77|4.60|4.00
 MEC|634c54722c6860c9773604c369f6e062|Anaheim Ducks|Los Angeles Kings|2.55|4.30|2.48
-MEC|d86dc755fe06568141403800fce290fb|Minnesota Wild|Colorado Avalanche|2.15|3.70|2.40
+MEC|d86dc755fe06568141403800fce290fb|Minnesota Wild|Colorado Avalanche|2.15|3.70|2.45
 REZ|e422af92d1fc06c0a330838c1c2f2e08|1
 REZ|50b80f3ebd38bf63663b11ae0afc575b|1
 REZ|aee4e3c225603397ab52de3d066b566b|2
