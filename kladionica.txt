@@ -57,16 +57,16 @@ REZ|696cf3d8787917f769a8d9a18560e2f0|3
 REZ|b99129d0236ae270cae2b42a0befc503|1
 REZ|d2f0dc1f1216c62c2b7206c15f84bc02|3
 REZ|c68f7a448ea05f866093dfb4221e076e|1
-MEC|27cb678af08c1929cf19d9350d9f511e|Boston Bruins|Toronto Maple Leafs|1.98|4.40|3.18
-MEC|978dfc077c2cba5159882a1f65088b8d|New Jersey Devils|Calgary Flames|1.57|5.00|4.90
+MEC|27cb678af08c1929cf19d9350d9f511e|Boston Bruins|Toronto Maple Leafs|2.02|4.35|3.10
+MEC|978dfc077c2cba5159882a1f65088b8d|New Jersey Devils|Calgary Flames|1.63|5.00|4.60
 MEC|b5234ea5788fb4f5393efc6c33c8e5e7|Nashville Predators|Utah Mammoth|2.50|4.20|2.55
-MEC|f23fc3f7fb3bfb06c2bee42fcfe8f050|St Louis Blues|Dallas Stars|2.71|4.15|2.29
-MEC|f4f067c12199285d9589564210a2a7d5|Columbus Blue Jackets|Detroit Red Wings|2.32|4.20|2.75
-MEC|f59fbb4eb34e72efeecfce2b7adc2198|Washington Capitals|Florida Panthers|2.55|4.20|2.50
-MEC|e455a88aa787a29717a862a536046895|Tampa Bay Lightning|Ottawa Senators|2.20|4.20|3.00
-MEC|a76ba8f9808ac21b09342afdd5df0b32|Philadelphia Flyers|Vancouver Canucks|1.76|4.70|4.00
-MEC|634c54722c6860c9773604c369f6e062|Anaheim Ducks|Los Angeles Kings|2.55|4.20|2.50
-MEC|d86dc755fe06568141403800fce290fb|Minnesota Wild|Colorado Avalanche|2.10|3.70|2.45
+MEC|f23fc3f7fb3bfb06c2bee42fcfe8f050|St Louis Blues|Dallas Stars|2.88|4.15|2.19
+MEC|f4f067c12199285d9589564210a2a7d5|Columbus Blue Jackets|Detroit Red Wings|2.33|4.20|2.75
+MEC|f59fbb4eb34e72efeecfce2b7adc2198|Washington Capitals|Florida Panthers|2.50|4.30|2.50
+MEC|e455a88aa787a29717a862a536046895|Tampa Bay Lightning|Ottawa Senators|2.18|4.25|2.95
+MEC|a76ba8f9808ac21b09342afdd5df0b32|Philadelphia Flyers|Vancouver Canucks|1.77|4.60|4.00
+MEC|634c54722c6860c9773604c369f6e062|Anaheim Ducks|Los Angeles Kings|2.60|4.30|2.43
+MEC|d86dc755fe06568141403800fce290fb|Minnesota Wild|Colorado Avalanche|2.10|3.75|2.45
 REZ|e422af92d1fc06c0a330838c1c2f2e08|1
 REZ|50b80f3ebd38bf63663b11ae0afc575b|1
 REZ|aee4e3c225603397ab52de3d066b566b|2
