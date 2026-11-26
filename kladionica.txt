@@ -1,5 +1,3 @@
-REZ|031fa761cc38e1b5afd9309b731b38b2|1
-REZ|b8c5bdb50209c7d050400c7d28c32e30|1
 REZ|35ca45d3e548dc7207fd7f1696ab16f5|3
 REZ|ac6fb079d66ef35a2a77e22b5e94ef8d|3
 REZ|a72a1703f7a92b80768255d1d977a761|1
@@ -14,11 +12,11 @@ REZ|42f48a4769eab3d1472d76aac0fd0fa7|3
 REZ|3167a4072c65c9314c71d0fe49be8e28|3
 REZ|6bfadbd22ed8a054cf82ec1b12b78243|3
 REZ|4f6d199bb67cf3a517a3880fd2f00b26|1
-MEC|9e203cbbc6d37b7b0d9c08cb89fe0b28|Milwaukee Bucks|Brooklyn Nets|1.88|0.00|1.92
-MEC|698d6d78acf30f4ff4e4aaf6670249ee|Memphis Grizzlies|Los Angeles Clippers|1.34|0.00|3.10
-MEC|60fd73164f7b0d1848f998d922155d87|Houston Rockets|Phoenix Suns|1.22|0.00|4.20
-MEC|e6df92326adb480e427bb7c10f445c60|Golden State Warriors|Sacramento Kings|1.27|0.00|3.25
-MEC|9aa9f220709533d70d11f85fae886771|Portland Trail Blazers|San Antonio Spurs|2.32|0.00|1.65
+REZ|87ce247fb83685389ca8ffb21be6cd3e|3
+REZ|f08629281f1510f47d91cc408f86a2a8|1
+REZ|07421d1675d6bc51bb5fa91f84a09eb3|3
+REZ|9e203cbbc6d37b7b0d9c08cb89fe0b28|3
+REZ|698d6d78acf30f4ff4e4aaf6670249ee|1
 REZ|3e065ed32915a4afefae3a851f6df12a|3
 REZ|d563569f19780b306d14d3c29b67f3bf|3
 REZ|6bcef0e5f7b2a021b7e07514cdfa6493|3
@@ -29,7 +27,6 @@ REZ|40589eed5e6894d5b8598ee721b9d57b|3
 REZ|a1ee21718811e522957cf904fb3ec31f|1
 REZ|c9a675960fa0ad6070fe3e6b378809a0|1
 REZ|b9ad9b132e4fd83592ee6cb62ea5cd46|1
-REZ|3a8553e25e16a66e676afc349395fec6|3
 REZ|e9429c68a48753de9779d88e6cf393ad|1
 REZ|806787e1b3ac73d09e3ae05f6d595865|3
 REZ|d127e1e72a1b9087aca692f3b5812532|1
@@ -38,16 +35,31 @@ REZ|2d095386ab1321c89df24896d98495ee|3
 REZ|5074be0d13d60cc7fd82b06c4d8ddd31|1
 REZ|43376208ec2111794696249fe50f5e84|3
 REZ|155fbdda10b6474a41649023baadfdf3|3
-MEC|54f5b5907980a875945c22ecce9a7537|Detroit Red Wings|Vancouver Canucks|1.75|4.50|3.62
-MEC|73d5e978fab618f46090f2dc47721bda|Dallas Stars|Nashville Predators|2.01|4.20|3.22
-MEC|696cf3d8787917f769a8d9a18560e2f0|Minnesota Wild|Utah Mammoth|2.10|4.60|2.95
-MEC|b99129d0236ae270cae2b42a0befc503|Colorado Avalanche|Montral Canadiens|2.34|4.25|2.61
-MEC|d2f0dc1f1216c62c2b7206c15f84bc02|Seattle Kraken|Chicago Blackhawks|2.07|4.30|3.02
-MEC|c68f7a448ea05f866093dfb4221e076e|Anaheim Ducks|San Jose Sharks|2.19|4.35|2.77
-MEC|27cb678af08c1929cf19d9350d9f511e|Boston Bruins|Toronto Maple Leafs|2.03|4.35|3.08
+REZ|71f3e5885a8f467260baa9aa31c62332|3
+REZ|a96a74be66899182f7eea8d72ec0e0fb|1
+REZ|52d88f1e2ea2e8165d992430998b84f1|3
+REZ|b8dd63eeebfa6db1cdb18fb101d4a323|3
+REZ|b06dda80256fb0e1b5efc78c0fca6d97|3
+REZ|03b050660209b2ef14e1e40ef22a585e|1
+REZ|70e9e98dccc07e86adad8349ad0c07fa|1
+REZ|c29af8a41ac40846cff6811e8a345682|1
+REZ|54f5b5907980a875945c22ecce9a7537|1
+REZ|73d5e978fab618f46090f2dc47721bda|3
+MEC|27cb678af08c1929cf19d9350d9f511e|Boston Bruins|Toronto Maple Leafs|2.00|4.40|3.14
 MEC|978dfc077c2cba5159882a1f65088b8d|New Jersey Devils|Calgary Flames|1.57|5.00|5.00
 MEC|b5234ea5788fb4f5393efc6c33c8e5e7|Nashville Predators|Utah Mammoth|2.50|4.20|2.55
-MEC|f23fc3f7fb3bfb06c2bee42fcfe8f050|St Louis Blues|Dallas Stars|2.73|4.15|2.28
+MEC|f23fc3f7fb3bfb06c2bee42fcfe8f050|St Louis Blues|Dallas Stars|2.74|4.15|2.27
+MEC|f4f067c12199285d9589564210a2a7d5|Columbus Blue Jackets|Detroit Red Wings|2.30|4.35|2.75
+MEC|f59fbb4eb34e72efeecfce2b7adc2198|Washington Capitals|Florida Panthers|2.50|4.25|2.55
+MEC|e455a88aa787a29717a862a536046895|Tampa Bay Lightning|Ottawa Senators|2.17|4.25|3.00
+MEC|a76ba8f9808ac21b09342afdd5df0b32|Philadelphia Flyers|Vancouver Canucks|1.77|4.60|4.00
+MEC|634c54722c6860c9773604c369f6e062|Anaheim Ducks|Los Angeles Kings|2.55|4.30|2.48
+MEC|d86dc755fe06568141403800fce290fb|Minnesota Wild|Colorado Avalanche|2.15|3.70|2.40
+MEC|80ad2e83d5b53a2f48a70cfdecd3dc5c|San Jose Sharks|Vegas Golden Knights|3.70|4.40|1.80
+MEC|05bd16c51ce4454e77900af56cd8997c|Chicago Blackhawks|New York Rangers|3.26|4.35|1.96
+MEC|26c93a0fb3baf8842c064fe3aad7082d|New York Islanders|Winnipeg Jets|2.15|4.40|2.95
+MEC|3553bd967a739912ede178eb373433b8|Buffalo Sabres|Pittsburgh Penguins|2.15|4.35|2.95
+MEC|6be85c97118cc429ba24770044f011cd|Edmonton Oilers|Seattle Kraken|1.87|4.50|3.45
 REZ|e422af92d1fc06c0a330838c1c2f2e08|1
 REZ|50b80f3ebd38bf63663b11ae0afc575b|1
 REZ|aee4e3c225603397ab52de3d066b566b|2
