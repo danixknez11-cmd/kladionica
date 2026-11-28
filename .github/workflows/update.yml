@@ -29,68 +29,81 @@ jobs:
           )
           out = []
           dodati_id = set()
-          count = 0
+          dodati_rez = set()
+          count_mec = 0
+          count_rez = 0
           now = datetime.datetime.now(datetime.timezone.utc)
 
+          # 1. Prvo upisujemo rezultate (zadnja 2 dana, maks 25 rezultata da ne predje SA-MP HTTP limit)
           for sport in lige:
-              if sport != "upcoming":
-                  try:
-                      url_sc = f"https://api.the-odds-api.com/v4/sports/{sport}/scores/?apiKey={api_key}&daysFrom=3"
-                      req = urllib.request.urlopen(url_sc, timeout=15)
-                      scores = json.loads(req.read().decode("utf-8"))
-                      for g in scores:
-                          if g.get("completed") and g.get("scores"):
-                              h, a = 0, 0
-                              for s in g["scores"]:
-                                  if s["name"] == g["home_team"]:
-                                      h = int(s["score"])
-                                  if s.get("name") == g["away_team"]:
-                                      a = int(s["score"])
-                              ishod = 1 if h > a else (3 if a > h else 2)
-                              gid = g.get("id")
-                              out.append(f"REZ|{gid}|{ishod}")
-                  except Exception:
-                      pass
+              if count_rez >= 25:
+                  break
+              try:
+                  url_sc = f"https://api.the-odds-api.com/v4/sports/{sport}/scores/?apiKey={api_key}&daysFrom=2"
+                  req = urllib.request.urlopen(url_sc, timeout=15)
+                  scores = json.loads(req.read().decode("utf-8"))
+                  for g in scores:
+                      if count_rez >= 25:
+                          break
+                      gid = g.get("id")
+                      if gid in dodati_rez:
+                          continue
+                      if g.get("completed") and g.get("scores"):
+                          h, a = 0, 0
+                          for s in g["scores"]:
+                              if s.get("name") == g["home_team"]:
+                                  h = int(s["score"])
+                              if s.get("name") == g["away_team"]:
+                                  a = int(s["score"])
+                          ishod = 1 if h > a else (3 if a > h else 2)
+                          out.append(f"REZ|{gid}|{ishod}")
+                          dodati_rez.add(gid)
+                          count_rez += 1
+              except Exception:
+                  pass
 
-              if count < 15:
-                  try:
-                      url_od = f"https://api.the-odds-api.com/v4/sports/{sport}/odds/?apiKey={api_key}&regions=eu&markets=h2h"
-                      req = urllib.request.urlopen(url_od, timeout=15)
-                      matches = json.loads(req.read().decode("utf-8"))
-                      for m in matches:
-                          if count >= 15:
-                              break
-                          mid = m.get("id")
-                          if mid in dodati_id:
-                              continue
-                          bms = m.get("bookmakers")
-                          if not bms:
-                              continue
-                          ct = datetime.datetime.fromisoformat(m.get("commence_time").replace("Z", "+00:00"))
-                          if ct <= now:
-                              continue
+          # 2. Zatim upisujemo do 10 nadolazecih utakmica
+          for sport in lige:
+              if count_mec >= 10:
+                  break
+              try:
+                  url_od = f"https://api.the-odds-api.com/v4/sports/{sport}/odds/?apiKey={api_key}&regions=eu&markets=h2h"
+                  req = urllib.request.urlopen(url_od, timeout=15)
+                  matches = json.loads(req.read().decode("utf-8"))
+                  for m in matches:
+                      if count_mec >= 10:
+                          break
+                      mid = m.get("id")
+                      if mid in dodati_id:
+                          continue
+                      bms = m.get("bookmakers")
+                      if not bms:
+                          continue
+                      ct = datetime.datetime.fromisoformat(m.get("commence_time").replace("Z", "+00:00"))
+                      if ct <= now:
+                          continue
 
-                          prva_klad = next(iter(bms))
-                          prvi_market = next(iter(prva_klad.get("markets")))
-                          outcomes = prvi_market.get("outcomes")
+                      prva_klad = next(iter(bms))
+                      prvi_market = next(iter(prva_klad.get("markets")))
+                      outcomes = prvi_market.get("outcomes")
 
-                          k1, kx, k2 = "0.00", "0.00", "0.00"
-                          for o in outcomes:
-                              cena = float(o.get("price"))
-                              if o.get("name") == m.get("home_team"):
-                                  k1 = f"{cena:.2f}"
-                              elif o.get("name") == m.get("away_team"):
-                                  k2 = f"{cena:.2f}"
-                              else:
-                                  kx = f"{cena:.2f}"
+                      k1, kx, k2 = "0.00", "0.00", "0.00"
+                      for o in outcomes:
+                          cena = float(o.get("price"))
+                          if o.get("name") == m.get("home_team"):
+                              k1 = f"{cena:.2f}"
+                          elif o.get("name") == m.get("away_team"):
+                              k2 = f"{cena:.2f}"
+                          else:
+                              kx = f"{cena:.2f}"
 
-                          home = re.sub(r"[^A-Za-z0-9 ]", "", m.get("home_team"))[:22]
-                          away = re.sub(r"[^A-Za-z0-9 ]", "", m.get("away_team"))[:22]
-                          out.append(f"MEC|{mid}|{home}|{away}|{k1}|{kx}|{k2}")
-                          dodati_id.add(mid)
-                          count += 1
-                  except Exception:
-                      pass
+                      home = re.sub(r"[^A-Za-z0-9 ]", "", m.get("home_team"))[:20]
+                      away = re.sub(r"[^A-Za-z0-9 ]", "", m.get("away_team"))[:20]
+                      out.append(f"MEC|{mid}|{home}|{away}|{k1}|{kx}|{k2}")
+                      dodati_id.add(mid)
+                      count_mec += 1
+              except Exception:
+                  pass
 
           if not out:
               out.append("NEMA_MECEVA_TRENUTNO")
