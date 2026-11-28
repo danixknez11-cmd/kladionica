@@ -1,31 +1,11 @@
-REZ|42f48a4769eab3d1472d76aac0fd0fa7|3
-REZ|3167a4072c65c9314c71d0fe49be8e28|3
-REZ|6bfadbd22ed8a054cf82ec1b12b78243|3
-REZ|4f6d199bb67cf3a517a3880fd2f00b26|1
-REZ|87ce247fb83685389ca8ffb21be6cd3e|3
-REZ|f08629281f1510f47d91cc408f86a2a8|1
-REZ|07421d1675d6bc51bb5fa91f84a09eb3|3
-REZ|9e203cbbc6d37b7b0d9c08cb89fe0b28|3
-REZ|698d6d78acf30f4ff4e4aaf6670249ee|1
-REZ|60fd73164f7b0d1848f998d922155d87|1
-REZ|e6df92326adb480e427bb7c10f445c60|1
-REZ|9aa9f220709533d70d11f85fae886771|1
-MEC|3c522e32c3035d7dc3e1734903b84654|New York Knicks|Miami Heat|1.68|0.00|2.26
-MEC|709de4f76f95aebf383d180ac3c6f679|Toronto Raptors|Brooklyn Nets|1.31|0.00|4.20
-MEC|326e8215b0369df0d4d65e5c0afe9ff5|Detroit Pistons|Milwaukee Bucks|1.26|0.00|4.70
-MEC|5b64071f3e3bf67b0fdea8d1ac81d0ec|Indiana Pacers|Philadelphia 76ers|2.05|0.00|1.53
 MEC|c5dc35b4116988de2c1425df17456478|Boston Celtics|Atlanta Hawks|1.25|0.00|4.00
-MEC|f0bc60d1516d217dba58c1f4fa653a59|Minnesota Timberwolves|Memphis Grizzlies|1.69|0.00|2.42
-MEC|46b1c571cf786a86e800d61fd1d79004|Phoenix Suns|Dallas Mavericks|1.72|0.00|2.36
-MEC|428050645d1dc8b16d84287e21de55fa|Utah Jazz|Denver Nuggets|4.60|0.00|1.26
-MEC|592a440c590415d43f5ffbfd922cd41e|Portland Trail Blazers|Golden State Warriors|1.36|0.00|3.70
-MEC|fecbaa4e1973217826262c63d8f52dea|Los Angeles Clippers|New Orleans Pelicans|1.79|0.00|2.24
+MEC|f0bc60d1516d217dba58c1f4fa653a59|Minnesota Timberwolves|Memphis Grizzlies|1.70|0.00|2.38
+MEC|46b1c571cf786a86e800d61fd1d79004|Phoenix Suns|Dallas Mavericks|1.63|0.00|2.56
+MEC|428050645d1dc8b16d84287e21de55fa|Utah Jazz|Denver Nuggets|4.40|0.00|1.28
+MEC|592a440c590415d43f5ffbfd922cd41e|Portland Trail Blazers|Golden State Warriors|1.34|0.00|3.85
+MEC|fecbaa4e1973217826262c63d8f52dea|Los Angeles Clippers|New Orleans Pelicans|1.82|0.00|2.20
 MEC|13d9ca3bcb664829c603755d31401002|San Antonio Spurs|Los Angeles Lakers|1.47|0.00|2.82
-REZ|40589eed5e6894d5b8598ee721b9d57b|3
-REZ|a1ee21718811e522957cf904fb3ec31f|1
-REZ|c9a675960fa0ad6070fe3e6b378809a0|1
-REZ|b9ad9b132e4fd83592ee6cb62ea5cd46|1
-MEC|120fc94554e50c8a69e40fc70338d29d|Anadolu Efes|Valencia Basket|2.10|0.00|1.68
-MEC|00b8c7596dd7b18c072df1738fde833d|Fenerbahce SK|KK Crvena zvezda|1.32|0.00|3.20
-MEC|cf4c707a81b0eb33eadb7432a6dea13c|Hapoel Tel Aviv|Pallacanestro Olimpia |1.26|0.00|3.55
-MEC|d896b28c29cd81f60519041d67cd1361|FC Bayern Mnchen|Paris Basketball|1.76|0.00|1.96
+MEC|2f2c60fafdc3fd106d71517a9de4f2b1|Washington Wizards|Orlando Magic|2.20|0.00|1.53
+MEC|a05c295062d5e2b8e9fa633c2797880e|Charlotte Hornets|Brooklyn Nets|1.40|0.00|2.90
+MEC|1ef1f5b9c8c88c584772f64a0d9a9435|Chicago Bulls|Indiana Pacers|1.55|0.00|1.98
+MEC|638cefeed67cdd691e1686e024981563|Milwaukee Bucks|Oklahoma City Thunder|4.25|0.00|1.14
