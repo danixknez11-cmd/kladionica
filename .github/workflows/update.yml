@@ -17,7 +17,7 @@ jobs:
           cat << 'EOF' > skripta.py
           import urllib.request, json, re, datetime
 
-          api_key = "8437677f0569d3de1c8fc29873bbcf86"
+          api_key = "50ad72c675949dd6abd26ce40a52bfd9"
           lige = (
               "basketball_nba",
               "basketball_euroleague",
